@@ -1,0 +1,26 @@
+{
+  "name": "StreetSmart-ExB",
+  "label": "StreetSmart-ExB",
+  "type": "widget",
+  "version": "1.13.0",
+  "exbVersion": "1.13.0",
+  "dependency": [
+    "jimu-arcgis"
+  ],
+  "author": "Cyclomedia; Giorgy Castaneda",
+  "description": "This is the Street Smart widget for the Experience Builder.",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {},
+  "translatedLocales": [
+    "en",
+    "es",
+    "de",
+    "fr",
+    "nl"
+  ],
+  "defaultSize": {
+    "width": 400,
+    "height": 300
+  }
+}

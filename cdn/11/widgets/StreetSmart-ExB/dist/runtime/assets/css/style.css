@@ -1,0 +1,530 @@
+/* changes the widget to fit the size of the box it is in */
+.cmt-widget{
+  height: 100%;
+  min-height: 230px;
+  /* max-height: 500px; */
+  padding-bottom: 60px;
+  padding-right: 15px;
+}
+
+.cmt-widget #panoramaViewerDiv {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /* height: 100%; */
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.cmt-widget .cmt.close-button{
+    width: 30px;
+    height: 30px;
+}
+
+.cmt-widget #sidePanel {
+    position: absolute;
+    right: 0px;
+    /*width: 300px;*/
+    /*display: flex;*/
+    height: 100%;
+    background-color: white;
+    transition: width 0.5s ease-out;
+    z-index: 15;
+    overflow: auto;
+    /*overflow-y: auto;*/
+}
+
+.cmt-widget #sidePanel.slide-out-panel{
+    transition: width 0.5s ease-in;
+    width: 0px;
+    overflow: hidden;
+}
+
+.cmt-widget #measurementPanel{
+    min-width: 250px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow: visible;
+    margin: 5px;
+}
+
+.cmt-widget #side-panel-close-button{
+    width: 28px;
+    height: 28px;
+    background-color: unset;
+    margin: 5px;
+    padding: 0px;
+    border: 0px;
+    transform: rotate(-90deg);
+    font-size: 24px;
+}
+
+.cmt-widget #side-panel-close-button:hover{
+    cursor: pointer;
+}
+
+.cmt-widget #zoom-warning {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    margin-top: -25px;
+}
+
+.cmt-widget .cmt .mosaic-tile{
+    margin: 0px;
+}
+
+.cmt-widget .checkbox-span{
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border: 1px solid hsla(210, 100%, 33%, 0.8);
+    padding: 0;
+    margin: 0 5px 0 0;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+}
+
+.cmt-widget .checkbox-span.selected:after{
+    content: "";
+    position: absolute;
+    display: block;
+}
+
+.cmt-widget .checkbox-span:after{
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 11px;
+    border: solid hsla(210, 100%, 33%, 0.8);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+.cmt-widget .layer-row{
+    font-size: 16px;
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    font-family: sans-serif;
+    background-color: white;
+    color: rgba(0, 84, 166,.8);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.cmt-widget .layer-row > label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cmt-widget .layer-row.selected {
+    background-color: hsla(210, 100%, 33%, 0.8);
+    color: white ;
+}
+
+.cmt-widget .layers-list{
+    display: flex;
+    flex-direction: column;
+    margin: 9px;
+}
+
+.cmt-widget .measurement-types-list{
+    color: hsla(210, 100%, 33%, 0.8);
+    display: flex;
+    flex-direction: column;
+    margin: 9px;
+}
+.cmt-widget.measurement-types-list >h2{
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    min-width: 100%;
+    margin-top: 5px;
+}
+.cmt-widget.cmt.measurement-button-container{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 0 15px 0 15px;
+    min-width: 100%;
+    margin-left: 0;
+    align-items: center;
+}
+
+.cmt-widget button.measurement-button.glyphicon {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    color: white;
+    background: #0054a6;
+    border: 1px solid #0054a6;
+    border-radius: 50%;
+}
+
+.cmt-widget button.measurement-button.glyphicon:hover{
+    cursor: pointer;
+}
+
+.cmt-widget button.measurement-button.glyphicon:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* changes the size of the widget */
+.cmt-widget .flex-row { 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.cmt-widget .hidden {
+    display: none !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.jimu-widget-streetsmartview {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.cmt-widget #panoramaViewerDiv .cmt .mosaic-tile{
+    margin: 0px;
+}
+
+.cmt-widget .cmt {
+    background: none !important;
+}
+
+.cmt-widget .cmt .window-manager-container .window{
+    margin : 0px !important;
+}
+
+.cmt-widget .cmt .window-manager-container {
+    padding : 0px !important;
+}
+
+.cmt-widget #addGeoJsonBtn{
+    background-image: url('../images/addJson.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cmt-widget #addGeoJsonBtn:hover{
+    background-image: url('../images/addHoverJson.png') !important;
+    background-repeat: no-repeat;
+}
+
+.cmt-widget #addMapDropBtn{
+    background-image: url('../images/mapDrop.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cmt-widget #addMapDropBtn:hover{
+    background-image: url('../images/mapDropHover.png') !important;
+    background-repeat: no-repeat;
+}
+
+.cmt-widget #uploadJsonBtn{
+    display: none;
+}
+
+.claro .dijitTooltipContainer{
+    background-color: black !important;
+    background-image: none !important;
+    color : white !important;
+    border :  none !important;
+}
+
+/*GC: Editing the street name styling so it fits within the widget better*/
+.cmt-widget .street-indicator{
+    right: 20px;
+    left: 120px;
+    margin-top: 1%;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-inline: 30px;
+}
+
+
+.cmt-widget.street-indicator span {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    height: auto;
+    margin: 0;
+}
+
+.cmt-widget .address-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: rgba(65,65,65,.75);*/
+    /*min-height: 33px;*/
+    pointer-events: none;
+    color: white;
+    /*padding-inline: 8%;*/
+}
+
+.cmt-widget .inner-address-bar {
+    display: flex;
+    padding-inline: 8%;
+    min-height: 33px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(65, 65, 65, .75);
+}
+
+.esriAttributeInspector .atiButtons .atiDeleteButton {
+    width: auto;
+    height: auto;
+    margin: 0 5px 0 0 ;
+}
+.esriAttributeInspector .atiButtons .saveButton {
+    margin: 0 5px 0 0 ;
+}
+
+#cmt .btn-container {
+    padding: 0;
+    margin-inline: unset;
+    width: unset;
+}
+
+/* dashboard theme sidebar color fix */
+.cmt-widget .sidebar-container{
+    color: #545454;
+}
+
+/* dashboard theme fixes*/
+label {
+    color: #545454;
+}
+
+/*!* dart theme fixes *!*/
+.dart-panel .jimu-widget-frame.jimu-container .cmt .cmtViewerPanel .panel-body .btn-secondary-right:hover span,
+.dart-panel #cmt .sidebar-panel-container .btn.btn-secondary:hover,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt.viewer .cmtNavBarPanel .nav-stacked>li a,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .panel-default .panel-heading,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .modal  .btn.btn-default *,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar .btn.btn-default:hover *,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar.expandable-navbar .btn.btn-default:focus *,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar .measurement-dropdown .dropdown-menu li:hover a>span,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar .measurement-dropdown:hover .btn.btn-default,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar .measurement-dropdown:hover .btn.btn-default *,
+.dart-panel #panoramaViewerDiv #cmt .measurement-navbar button:hover,
+.dart-panel #panoramaViewerDiv #cmt .measurement-navbar button:hover .glyphicon,
+.dart-panel #panoramaViewerDiv #cmt .imageControls button:not(.panel-header-button) .glyphicon
+{
+    color: white !important;
+}
+
+.dart-panel #panoramaViewerDiv #cmt .nav-tabs > li a,
+.dart-panel .jimu-widget-frame.jimu-container .cmt .cmtViewerPanel .panel-body .slider-tick-label,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .dropdown-menu>li>a,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .cmtImageInformationPanel .tab-content *,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .custom-slider .range-labels li,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .measurement-floating-panel *,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar .measurement-dropdown .dropdown-menu a>span,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv > div > div > div.measurement-select-modal.fade.in.modal > div > div > div.modal-body > div > div > div > span {
+    color: #0054a6 !important;
+}
+
+.dart-panel #panoramaViewerDiv .nav-link.active,
+.dart-panel #panoramaViewerDiv #cmt .measurement-navbar *,
+.dart-panel #panoramaViewerDiv #cmt .btn-viewer-icn:not(:hover):not(.active-panel):not(:focus) .glyphicon,
+.dart-panel .jimu-widget-frame.jimu-container .cmt .cmtViewerPanel .panel-body .btn-secondary-right span,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .navbar  .btn.btn-default *,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .cmt-navbar.measurement-navbar *,
+.dart-panel .jimu-widget-frame.jimu-container .cmt .window .recordingTimestamp .timetravelToggle:hover,
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .windowcontrols button:hover *,
+.dart-panel .panel-header-button:hover .glyphicon {
+    color: #0054a6 !important;
+}
+
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .measurement-panel-error-message p span {
+    color: #9c7f4b !important
+}
+
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .measurement-navbar .navbar-nav .btn-default:disabled .glyphicon {
+    color: #bcbdbc !important;
+}
+
+.dart-panel #cmt .measurement-select-modal .btn-modal__wrapper,
+.dart-panel #cmt .share-modal .btn-modal__wrapper,
+.dart-panel #panoramaViewerDiv #cmt label,
+.dart-panel #measurementPanel *:not(button),
+.dart-panel #measurementPanel .close-button,
+.dart-panel #cmt .sidebar-panel-container *,
+.dart-panel #cmt .cmtViewerPanel .card-body *,
+.dart-panel #cmt .layerpanel .checkbox span {
+    color: #666 !important;
+}
+.dart-panel .jimu-widget-frame.jimu-container .timetravel .travelDate span {
+    color: #2c3e50 !important;
+}
+
+.dart-panel .jimu-widget-frame.jimu-container #panoramaViewerDiv .cmt .measurement-floating-panel .warning span {
+    color: #ec7a08 !important
+}
+
+th{
+    font-weight: bold;
+}
+/* fixing object info table*/
+#cmt .table-wrap th, #cmt .table-wrap td{
+    max-width: 250px;
+    word-break: normal !important;
+}
+
+#cmt .viewer .cmtNavBarPanel .attributeinfopanel .panel-heading{
+    overflow: auto;
+}
+
+#cmt .viewer .cmtNavBarPanel .attributeinfopanel .panel-heading .card-title{
+    display: flex;
+    margin-bottom: 0px;
+}
+
+/* fixed size for navbar icons */
+.cmt-widget #cmt .btn-viewer-icn .glyphicon {
+    font-size: 24px;
+}
+
+/* show active tabs | reset opacity to 1 */
+.cmt-widget .show {
+    opacity: 1;
+}
+
+/*change overlay/elevation box width and height*/
+#cmt .cmtViewerPanel,  #cmt .cmtViewerPanel .card{
+    width:100%;
+    max-width:325px !important;
+    max-height:250px;
+}
+#cmt .card{
+    display: block;
+}
+
+#cmt .cmtViewerPanel .card-body{
+    max-height:220px;
+}
+
+#cmt .viewer .cmtNavBarPanel .panel-overlays, #cmt .viewer .cmtNavBarPanel .card-body .card-body {
+    max-height: 175px;
+}
+
+#cmt .cmtPanoramaCrossSectionPanelInner.card .panel-heading .options .form-label{
+    color: white;
+}
+
+/* temporary cross section styling*/
+#cmt .cmtPanoramaCrossSectionPanelInner.card .panel-heading .options{
+  display: block;
+}
+
+#cmt .viewer .cmtNavBarPanel .panel-header-text{
+  font-size: 14px;
+}
+
+/* fix side panel height */
+/*#cmt .fixed-panel .panel-body {*/
+/*    height: 83%;*/
+/*}*/
+
+/*!* fix side panel width *!*/
+/*#cmt .fixed-panel, #cmt .sidebar-width {*/
+/*    width: 300px !important;*/
+/*}*/
+
+/*.jimu-panel .jimu-on-screen-widget-panel .jimu-main-background {
+    width: 540px !important;
+}*/
+
+/*Button Style*/
+
+.modern-blue {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #41f0a4 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 33px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 14px;
+}
+
+.modern-blue:active {
+  -webkit-box-shadow: inset 0px 0px 10px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 10px #c1c1c1;
+          box-shadow: inset 0px 0px 10px #c1c1c1;
+   outline: none;
+}
+
+/* changes font size for point cloud display box styling */
+#cmt .slider-container .rc-slider-mark-text, #cmt .slider-container .rc-slider-mark-text-active{
+  font-size: 10px;
+}
+
+/* changes font color for object info box */
+#cmt .card-body{
+  color: black;
+}
+
+/* .modern-blue:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+} */
+
+/* .modern-blue:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+} */
+
+
+
