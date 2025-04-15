@@ -1,0 +1,11 @@
+{
+  "exampleConfigProperty": "test",
+  "token": "",
+  "locale" : "en-US",
+  "atlasHost": "https://atlasapi.cyclomedia.com/api",
+  "agreement": "",
+  "measurement": "",
+  "overlay": "",
+  "navigation": "",
+  "username": ""
+}
